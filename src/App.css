@@ -20,6 +20,12 @@
   max-width: 780px;
 }
 
+/* Last day button needs its own trailing space since overflow-x: auto drops right padding */
+.day-selector > button:last-child {
+  margin-right: 32px;
+}
+
+/* ─── Exercise Card ──────────────────────────────────────────── */
 .exercise-card {
   display: flex;
   align-items: center;
@@ -44,6 +50,10 @@
 
   .day-selector {
     padding: 14px 12px 0;
+  }
+
+  .day-selector > button:last-child {
+    margin-right: 12px;
   }
 
   .main-content {

@@ -170,7 +170,6 @@ export default function WorkoutRoutine() {
       color: "#e8e4dc",
       fontFamily: "'Georgia', 'Times New Roman', serif",
       padding: "0",
-      overflowX: "hidden",
     }}>
       {/* Header */}
       <div className="workout-header" style={{

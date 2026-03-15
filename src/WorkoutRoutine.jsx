@@ -164,7 +164,7 @@ export default function WorkoutRoutine() {
   const current = days[activeDay];
 
   return (
-    <div style={{
+    <div className="workout-container" style={{
       minHeight: "100vh",
       background: "#0a0a0f",
       color: "#e8e4dc",
@@ -173,9 +173,8 @@ export default function WorkoutRoutine() {
       overflowX: "hidden",
     }}>
       {/* Header */}
-      <div style={{
+      <div className="workout-header" style={{
         borderBottom: "1px solid #1e1e2e",
-        padding: "28px 32px 20px",
         background: "linear-gradient(180deg, #0f0f1a 0%, #0a0a0f 100%)",
       }}>
         <div style={{ fontSize: "10px", letterSpacing: "0.3em", color: "#6b6b8a", textTransform: "uppercase", marginBottom: "6px", fontFamily: "monospace" }}>
@@ -197,11 +196,10 @@ export default function WorkoutRoutine() {
       </div>
 
       {/* Day Selector */}
-      <div style={{
+      <div className="day-selector" style={{
         display: "flex",
         overflowX: "auto",
         gap: "2px",
-        padding: "20px 32px 0",
         scrollbarWidth: "none",
       }}>
         {days.map((d, i) => (
@@ -231,7 +229,7 @@ export default function WorkoutRoutine() {
       </div>
 
       {/* Main Content */}
-      <div style={{ padding: "24px 32px", maxWidth: "780px" }}>
+      <div className="main-content">
 
         {/* Day Header */}
         <div style={{
@@ -322,22 +320,17 @@ export default function WorkoutRoutine() {
         {expandedSection === "exercises" && (
           <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
             {current.exercises.map((ex, i) => (
-              <div key={i} style={{
+              <div key={i} className="exercise-card" style={{
                 background: "#0f0f1a",
                 border: "1px solid #1e1e2e",
                 borderRadius: "8px",
                 padding: "14px 18px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                gap: "16px",
-                flexWrap: "wrap",
               }}>
                 <div style={{ flex: 1, minWidth: "160px" }}>
                   <div style={{ fontSize: "14px", color: "#e8e4dc", marginBottom: ex.note ? "4px" : 0 }}>{ex.name}</div>
                   {ex.note && <div style={{ fontSize: "11px", color: "#6b6b8a", fontFamily: "monospace" }}>{ex.note}</div>}
                 </div>
-                <div style={{ display: "flex", gap: "12px", flexShrink: 0 }}>
+                <div className="exercise-stats">
                   <div style={{ textAlign: "center" }}>
                     <div style={{ fontSize: "16px", fontWeight: "300", color: "#6366f1" }}>{ex.sets}</div>
                     <div style={{ fontSize: "9px", color: "#6b6b8a", fontFamily: "monospace", letterSpacing: "0.1em" }}>SETS</div>
@@ -368,19 +361,14 @@ export default function WorkoutRoutine() {
               </p>
             </div>
             {current.coreExercises.map((ex, i) => (
-              <div key={i} style={{
+              <div key={i} className="exercise-card" style={{
                 background: "#0f0f1a",
                 border: "1px solid #2a1f44",
                 borderRadius: "8px",
                 padding: "14px 18px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                gap: "16px",
-                flexWrap: "wrap",
               }}>
                 <div style={{ fontSize: "14px", color: "#e8e4dc", flex: 1 }}>{ex.name}</div>
-                <div style={{ display: "flex", gap: "12px", flexShrink: 0 }}>
+                <div className="exercise-stats">
                   <div style={{ textAlign: "center" }}>
                     <div style={{ fontSize: "16px", fontWeight: "300", color: "#8b5cf6" }}>{ex.sets}</div>
                     <div style={{ fontSize: "9px", color: "#6b6b8a", fontFamily: "monospace", letterSpacing: "0.1em" }}>SETS</div>

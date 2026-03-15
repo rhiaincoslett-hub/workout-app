@@ -1,33 +1,25 @@
-/* ─── Root & Layout ─────────────────────────────────────────── */
+/* ─── Root ───────────────────────────────────────────────────── */
 #root {
   max-width: 100%;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   text-align: left;
 }
 
-/* ─── Workout Container ──────────────────────────────────────── */
-.workout-container {
-  min-height: 100vh;
-}
-
-/* ─── Header ─────────────────────────────────────────────────── */
+/* ─── Base layout classes (match original inline values) ─────── */
 .workout-header {
   padding: 28px 32px 20px;
 }
 
-/* ─── Day Selector ───────────────────────────────────────────── */
 .day-selector {
   padding: 20px 32px 0;
 }
 
-/* ─── Main Content ───────────────────────────────────────────── */
 .main-content {
   padding: 24px 32px;
   max-width: 780px;
 }
 
-/* ─── Exercise Card ──────────────────────────────────────────── */
 .exercise-card {
   display: flex;
   align-items: center;
@@ -42,64 +34,21 @@
   flex-shrink: 0;
 }
 
-/* ─── Weekly Overview ────────────────────────────────────────── */
-.weekly-overview-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
 /* ═══════════════════════════════════════════════════════════════
-   MOBILE  ≤ 480px  (small phones)
+   MOBILE  ≤ 640px  — tighter horizontal padding only
 ═══════════════════════════════════════════════════════════════ */
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .workout-header {
     padding: 18px 16px 14px;
   }
 
   .day-selector {
     padding: 14px 12px 0;
-    gap: 4px;
   }
 
   .main-content {
     padding: 16px 14px;
-  }
-
-  .exercise-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .exercise-stats {
-    align-self: flex-end;
-  }
-
-  .weekly-overview-row {
-    gap: 10px;
-  }
-
-  /* Tighten up the section tabs */
-  .section-tabs {
-    flex-wrap: wrap;
-  }
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   MOBILE / SMALL TABLET  ≤ 640px
-═══════════════════════════════════════════════════════════════ */
-@media (max-width: 640px) {
-  .workout-header {
-    padding: 20px 20px 16px;
-  }
-
-  .day-selector {
-    padding: 16px 16px 0;
-  }
-
-  .main-content {
-    padding: 18px 16px;
+    max-width: 100%;
   }
 }
 
@@ -122,16 +71,9 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   DESKTOP  ≥ 1024px
+   DESKTOP  ≥ 1024px  — more breathing room, content stays left-aligned
 ═══════════════════════════════════════════════════════════════ */
 @media (min-width: 1024px) {
-  .workout-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
   .workout-header {
     padding: 36px 48px 24px;
   }
@@ -143,18 +85,5 @@
   .main-content {
     padding: 28px 48px;
     max-width: 860px;
-  }
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   WIDE DESKTOP  ≥ 1280px
-═══════════════════════════════════════════════════════════════ */
-@media (min-width: 1280px) {
-  .workout-container {
-    max-width: 1100px;
-  }
-
-  .main-content {
-    max-width: 900px;
   }
 }
